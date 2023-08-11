@@ -23,10 +23,11 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-unit-test:
-  needs: [ welcome ]
-  runs-on: ubuntu-latest
-  steps:
+  unit-test:
+    needs: [ welcome ]
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Checkout the code
       uses: actions/checkout@v2
 
