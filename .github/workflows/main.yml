@@ -24,7 +24,7 @@ jobs:
           echo test, and deploy your project.
 
   package:
-    needs: [ static-code-analysis ]
+    needs: [ build ]
     name: Generate APK
     runs-on: ubuntu-latest
     steps:
