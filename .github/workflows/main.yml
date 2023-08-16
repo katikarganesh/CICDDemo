@@ -31,7 +31,10 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v3
 
-      - name: Upload html test report
+      - name: Run lint
+        run: ./gradlew lint
+
+      - name: Upload html lint report
         uses: actions/upload-artifact@v3
         with:
           name: lint.html
