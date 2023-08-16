@@ -39,7 +39,7 @@ jobs:
       - name: SonarCloud Scan
         run: ./gradlew app:sonarqube -Dsonar.login=${{ secrets.SONAR_KEY }}
         env:
-        GITHUB_TOKEN: ${{ secrets.SONAR_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     needs: [ static-code-analysis ]
