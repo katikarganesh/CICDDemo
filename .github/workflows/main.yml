@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Run a one-line script
         run: echo Hello, world!
@@ -29,10 +29,10 @@ jobs:
 
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Upload html test report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: lint.html
           path: app/build/reports/lint-results-debug.html
@@ -43,7 +43,7 @@ jobs:
 
     steps:
     - name: Checkout the code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: set up JDK 17
       uses: actions/setup-java@v1
@@ -54,7 +54,7 @@ jobs:
       run: ./gradlew test
 
     - name: Upload test report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: unit_test_report
         path: app/build/reports/tests/testDebugUnitTest/
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: set up JDK 17
         uses: actions/setup-java@v1
@@ -76,7 +76,7 @@ jobs:
         run: ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ganesh_cicd_demo.apk
           path: app/build/outputs/apk/debug/app-debug.apk
